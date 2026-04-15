@@ -309,7 +309,7 @@ export default function Home() {
         <a 
           href="#about" 
           aria-label="Scroll down"
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-float hover:scale-110 hover:-translate-y-1 transition-all group"
+          className="hidden md:block absolute bottom-6 left-1/2 -translate-x-1/2 animate-float hover:scale-110 hover:-translate-y-1 transition-all group"
         >
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2 group-hover:border-primary/50 transition-colors">
             <div className="w-1 h-2.5 bg-muted-foreground/50 rounded-full animate-pulse group-hover:bg-primary transition-colors" />
@@ -539,7 +539,7 @@ export default function Home() {
             </div>
 
             {/* Certifications */}
-            <div className="animate-on-scroll" style={{ transitionDelay: "0.15s" }}>
+            <div className="animate-on-scroll mt-10 md:mt-0" style={{ transitionDelay: "0.15s" }}>
               <div className="flex items-center gap-2 mb-4">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>
                 <h3 className="text-sm font-medium text-primary tracking-wider uppercase">

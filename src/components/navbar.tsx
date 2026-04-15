@@ -33,7 +33,7 @@ export default function Navbar() {
           href="#hero"
           className="text-xl font-bold gradient-text tracking-tight"
         >
-          Liyu<span className="text-muted-foreground">.</span>
+          Betel<span className="text-muted-foreground">.</span>
         </a>
 
         {/* Desktop links */}
