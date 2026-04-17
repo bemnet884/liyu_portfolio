@@ -29,8 +29,8 @@ const ToolIcon = () => (
 /* ─── Data ─── */
 
 const stats = [
-  { value: "4+", label: "Projects Completed" },
-  { value: "3+", label: "Years Work Experience" },
+  { value: "5+", label: "Projects Completed" },
+  { value: "1+", label: "Years Work Experience" },
   { value: "Python", label: "SQL & Excel" },
   { value: "Data", label: "Driven Insights" },
 ];
@@ -157,8 +157,9 @@ const education = [
 
 const certifications = [
   { name: "Machine Learning", url: "https://drive.google.com/file/d/1dM6vrQS2SCyJntm32QmXozvwI0Zgi_xJ/view" },
-  { name: "Data Science & Analytics Internship" },
+  { name: "Data Science & Analytics Internship", url: "https://drive.google.com/file/d/10WCXM10xdSOqI3vKn_McZ85SsUvjPZnj/view" },
   { name: "Data Analysis and Visualization", url: "https://drive.google.com/file/d/1IKqcq1PhmTosuhjjJtzj-g8M_4MYdLI3/view?usp=drive_link" },
+  { name: "Data analysis LOR", url: "https://drive.google.com/file/d/1ePdKKVsH2YXbi2UF7BYcNvVVZy7p7VTw/view" },
   { name: "Arduino Certificate", url: "https://drive.google.com/file/d/1J-tEUjpMM3DDga4_mEljb68ePYGkJrwl/view?usp=sharing" },
 ];
 
@@ -306,8 +307,8 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <a 
-          href="#about" 
+        <a
+          href="#about"
           aria-label="Scroll down"
           className="hidden md:block absolute bottom-6 left-1/2 -translate-x-1/2 animate-float hover:scale-110 hover:-translate-y-1 transition-all group"
         >
@@ -428,9 +429,7 @@ export default function Home() {
                           {exp.company}
                         </p>
                       </div>
-                      <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20 whitespace-nowrap">
-                        {exp.period}
-                      </span>
+
                     </div>
                     <ul className="space-y-2 mt-4">
                       {exp.achievements.map((a, j) => (
@@ -505,7 +504,7 @@ export default function Home() {
       {/* ═══════════ EDUCATION ═══════════ */}
       <section id="education" className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent" />
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="animate-on-scroll text-center mb-16">
             <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">
               Academic Background
@@ -515,9 +514,9 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Degree */}
-            <div className="animate-on-scroll">
+          <div className="grid md:grid-cols-5 gap-8 items-start">
+            {/* Degree — 2 columns */}
+            <div className="animate-on-scroll md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
                 <h3 className="text-sm font-medium text-primary tracking-wider uppercase">
@@ -525,21 +524,27 @@ export default function Home() {
                 </h3>
               </div>
               {education.map((ed) => (
-                <div key={ed.degree} className="glass rounded-2xl p-7 card-glow h-full hover:border-primary/20 transition-colors">
-                  <h4 className="text-lg font-semibold mb-1">{ed.degree}</h4>
-                  <p className="text-primary text-sm font-medium mb-1">
+                <div key={ed.degree} className="glass rounded-2xl p-7 card-glow hover:border-primary/20 transition-colors group">
+                  <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{ed.degree}</h4>
+                  <p className="text-primary/80 text-sm font-medium mb-2">
                     {ed.school}
                   </p>
-                  <p className="text-xs text-muted-foreground mb-4">
-                    {ed.year}
-                  </p>
-                  <p className="text-sm text-muted-foreground">{ed.details}</p>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg className="w-3.5 h-3.5 text-muted-foreground/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+                    <p className="text-xs text-muted-foreground">
+                      {ed.year}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg className="w-3.5 h-3.5 text-muted-foreground/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                    <p className="text-sm text-muted-foreground">{ed.details}</p>
+                  </div>
                 </div>
               ))}
             </div>
 
-            {/* Certifications */}
-            <div className="animate-on-scroll mt-10 md:mt-0" style={{ transitionDelay: "0.15s" }}>
+            {/* Certifications — 3 columns */}
+            <div className="animate-on-scroll md:col-span-3" style={{ transitionDelay: "0.15s" }}>
               <div className="flex items-center gap-2 mb-4">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>
                 <h3 className="text-sm font-medium text-primary tracking-wider uppercase">
@@ -590,7 +595,7 @@ export default function Home() {
             </p>
 
             <a
-              href="mailto:shibeshibetel@gmail.com"
+              href="mailto:shibeshibetel@gmail.com?subject=Hello%20Betel"
               className="inline-flex items-center gap-2 px-10 py-4 rounded-xl font-medium gradient-bg text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-1 text-lg mb-10 group"
             >
               Contact Me
@@ -599,18 +604,20 @@ export default function Home() {
 
             {/* Socials */}
             <div className="flex items-center justify-center gap-4">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all card-glow"
-                  aria-label={s.label}
-                >
-                  {s.icon}
-                </a>
-              ))}
+              {socials.map((s) => {
+                const isMailto = s.href.startsWith("mailto:");
+                return (
+                  <a
+                    key={s.label}
+                    href={isMailto ? "mailto:shibeshibetel@gmail.com?subject=Hello%20Betel" : s.href}
+                    {...(!isMailto && { target: "_blank", rel: "noopener noreferrer" })}
+                    className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all card-glow"
+                    aria-label={s.label}
+                  >
+                    {s.icon}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
