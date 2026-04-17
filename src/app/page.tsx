@@ -184,7 +184,7 @@ const socials = [
   },
   {
     label: "Email",
-    href: "mailto:shibeshibetel@gmail.com",
+    href: "mailto:shibeshibetel@gmail.com?to=shibeshibetel@gmail.com&subject=Hello%20Betel",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -595,7 +595,7 @@ export default function Home() {
             </p>
 
             <a
-              href="mailto:shibeshibetel@gmail.com?subject=Hello%20Betel"
+              href="mailto:shibeshibetel@gmail.com?to=shibeshibetel@gmail.com&subject=Hello%20Betel"
               className="inline-flex items-center gap-2 px-10 py-4 rounded-xl font-medium gradient-bg text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-1 text-lg mb-10 group"
             >
               Contact Me
@@ -609,7 +609,7 @@ export default function Home() {
                 return (
                   <a
                     key={s.label}
-                    href={isMailto ? "mailto:shibeshibetel@gmail.com?subject=Hello%20Betel" : s.href}
+                    href={isMailto ? "mailto:shibeshibetel@gmail.com?to=shibeshibetel@gmail.com&subject=Hello%20Betel" : s.href}
                     {...(!isMailto && { target: "_blank", rel: "noopener noreferrer" })}
                     className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 hover:-translate-y-1 transition-all card-glow"
                     aria-label={s.label}
